@@ -4,10 +4,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 //importando require-dir
 const requireDir = require('require-dir');
+//importando cors
+const cors = require('cors');
 
-//iniciando o App (executando o express)
+//iniciando o App (executando o express e o cors)
 const app = express();
 app.use(express.json()); //para permitir que os dados sejam enviados para a aplicação em formato json
+app.use(cors());
 
 //inicializando o DB (nodeapi é o nome da DB)
 mongoose.connect (
